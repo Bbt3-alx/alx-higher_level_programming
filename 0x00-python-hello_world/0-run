@@ -1,6 +1,2 @@
 #!/bin/bash
-# Set the python file name in the environment variable
-export PYFILE="main.py"
-
-# Execute the file
 python3 $PYFILE
