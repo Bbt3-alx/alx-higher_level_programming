@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-str = "Holbetrton School"
+str = "Holberton School"
 print(f"{3*str} {str[:10]}")
