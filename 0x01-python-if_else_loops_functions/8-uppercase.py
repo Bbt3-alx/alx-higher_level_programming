@@ -4,7 +4,7 @@ def uppercase(str):
 
     for s in str:
         if (s.isalpha()):
-            new_str += chr(ord(s) - 32) if ('a' <= s <= 'z') else
+            new_str += chr(ord(s) - 32) if ('a' <= s <= 'z') else s
         else:
             new_str += s
-        print("{}".format(new_str))
+    print("{}".format(new_str))
