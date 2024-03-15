@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-exec("import builtins; builtins.print('#pythoniscool')\n")
+__import__("os").write(1, '#pythoniscoo\n'.encode('UTF-8'))
