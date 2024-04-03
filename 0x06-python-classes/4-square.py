@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A module with a single class its attribute"""
 
+
 class Square:
     """a class Square that defines a square"""
     def __init__(self, size=0):
