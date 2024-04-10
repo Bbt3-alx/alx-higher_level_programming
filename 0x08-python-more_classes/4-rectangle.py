@@ -1,28 +1,27 @@
 #!/usr/bin/python3
-""" A module with a class named Rectangle """
+""" Module of a rectangle class"""
 
 
 class Rectangle:
-    """ A class that get, set and calculate the area and the perimeter
-    of a Rectangle"""
+    """ A class that define a rectangle"""
     def __init__(self, width=0, height=0):
-        """Initialize the rectangle """
+        """Initialize the rectangle"""
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
-        """Get the width of the rectangle"""
-        return self.__width
+        """Get the width"""
+        return self.width
 
     @property
     def height(self):
-        """Get the height of the rectangle"""
-        return self.__height
+        """Get the height"""
+        return self.width
 
     @width.setter
     def width(self, value):
-        """set the width of the rectangle"""
+        """Set the width of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -41,11 +40,21 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        """Calculate the area of the rectangle"""
+        """Return the rectangle area"""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Calculate the perimeter of the rectangle"""
-        if self.__width == 0 or self.height == 0:
+        """Return the rectangle perimeter"""
+        if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """String representation of the rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return '\n'.join(['#' * self.__width] * self.__height)
+
+    def __repr__(self):
+        """Representation of the rectangle object"""
+        return f"Rectangle({self.__width}, {self.__height})"

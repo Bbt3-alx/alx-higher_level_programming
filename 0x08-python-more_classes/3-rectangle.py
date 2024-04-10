@@ -5,8 +5,9 @@
 class Rectangle:
     """ A class that define a rectangle"""
     def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        """Initialize the rectangle"""
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -44,13 +45,13 @@ class Rectangle:
 
     def perimeter(self):
         """Return the rectangle perimeter"""
-        if self.__width == 0 | self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         else:
             return 2 * (self.__width + self.__height)
 
     def __str__(self):
         """String representation of the rectangle"""
-        if self.__width == 0 | self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
         return '\n'.join(['#' * self.__width] * self.__height)
