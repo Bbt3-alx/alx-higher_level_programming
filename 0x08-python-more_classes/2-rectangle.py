@@ -6,8 +6,8 @@ class Rectangle:
     """ A class that get, set and calculate the area and the perimeter
     of a Rectangle"""
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -21,7 +21,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """set the widht of the rectangle"""
+        """set the width of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
