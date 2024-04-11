@@ -3,7 +3,16 @@
 
 
 def matrix_divided(matrix, div):
-    """a function that divides all elements of a matrix"""
+    """
+    Divides all elements of a matrix by a given divisor.
+
+    Args:
+        matrix (list of lists): The matrix (list of rows).
+        div (int or float): The divisor.
+
+    Returns:
+        list: A new matrix with rounded division results.
+    """
     msg = "matrix must be a matrix (list of lists) of integers/floats"
     new_list = []
     if not isinstance(matrix, list):
@@ -16,6 +25,9 @@ def matrix_divided(matrix, div):
     matrix_len = len(matrix[0])
 
     for element in matrix:
+        if not isinstance(element, list):
+            raise TypeError(msg)
+
         if len(element) != matrix_len:
             raise TypeError("Each row of the matrix must have the same size")
         else:
