@@ -1,4 +1,4 @@
-#!/usr/bin/pyrthon3
+#!/usr/bin/python3
 """ A module with a function that devides elements of a matrix"""
 
 
