@@ -1,0 +1,24 @@
+This file be used to test the module `5-text_indentation`
+
+### ALL THE TEST CASES ARE SEPARATED BY `---`
+
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+---
+>>> text_indentation("Lorem ipsum dolor. sit amet?")
+Lorem ipsum dolor.
+<BLANKLINE>
+sit amet?
+<BLANKLINE>
+
+---
+>>> text_indentation(12)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+---
+text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
