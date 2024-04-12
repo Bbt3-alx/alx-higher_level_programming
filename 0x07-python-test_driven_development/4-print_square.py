@@ -3,14 +3,14 @@
 
 
 def print_square(size):
-        """
-        a function that prints a square with the character #
+    """
+    a function that prints a square with the character #
 
-        args:
-            size - the size of the square
+    args:
+        size - the size of the square
 
-        return : Nothing
-        """
+    return : Nothing
+    """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
