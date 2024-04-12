@@ -1,4 +1,4 @@
-#!/usr/bin/poython3
+#!/usr/bin/python3
 """ This module have a function that prints a text with 2 new line after
 each '.? and :'
 """
