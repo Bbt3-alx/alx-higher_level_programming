@@ -1,0 +1,26 @@
+##		THIS file WILL TEST THE MODULE 7-base_geometry		##
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+---
+>>> bg = BaseGeometry()
+
+---
+>>> bg.integer_validator("my_int", 12)
+
+---
+>>> bg.integer_validator(42)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("Bre", "45")
+Traceback (most recent call last):
+...
+TypeError: Bre must be an integer
+
+---
+>>> bg.integer_validator(0)
+Traceback (most recent call last):
+...
+ValueError: 5 must be greater than 0
