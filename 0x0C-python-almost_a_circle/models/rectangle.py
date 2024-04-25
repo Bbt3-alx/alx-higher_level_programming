@@ -4,14 +4,35 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """class Rectangle that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initiate the Rectangle"""
         super().__init__(id)
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
+
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
+
+        if not isinstance(x, int):
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
+
+        if not isinstance(y, int):
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
+
         self.__y = y
 
     @property
@@ -77,11 +98,10 @@ class Rectangle(Base):
 
     def display(self):
         """Prints in stdout the Rectangle instance with the caracter #"""
-        for h in range(self.__height):
-            for w in range(self.__width):
-                for x in range(self.__x):
-                    print("#", end='')
+        for _ in range(self.__y):
             print()
+        for _ in range(self.__height):
+            print(' ' * self.__x + '#' * self.__width)
 
     def __str__(self):
         """Overright the __str__ methods"""
@@ -89,25 +109,30 @@ class Rectangle(Base):
         h = self.__height
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {w}/{h}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
-        if len(args) <= 1:
+        if len(args) >= 1:
             self.id = args[0]
-        elif len(args) <= 2:
-            self.id = args[0]
+        if len(args) >= 2:
             self.__width = args[1]
-        elif len(args) <= 3:
-            self.id = args[0]
-            self.__width = args[1]
+        if len(args) >= 3:
             self.__height = args[2]
-        elif len(args) <= 4:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
+        if len(args) >= 4:
             self.__x = args[3]
-        else:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
+        if len(args) >= 5:
             self.__y = args[4]
+        else:
+            self.id = kwargs.get('id', self.id)
+            self.__width = kwargs.get('widht', self.__width)
+            self.__height = kwargs.get('height', self.__height)
+            self.__x = kwargs.get('x', self.__x)
+            self.__y = kwargs.get('y', self.__y)
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle"""
+        return {'id' : self.id,
+                'width' : self.width,
+                'height' : self.height,
+                'x' : self.x,
+                'y' : self.y
+                }
