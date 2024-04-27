@@ -18,7 +18,7 @@ class TestBase(unittest.TestCase):
         """Test to json string non empty list"""
         list_dicts = [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]
         json_string = Base.to_json_string(list_dicts)
-        expected_json_str = '[{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]'
+        expected_json_string = '[{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]'
         self.assertEqual(json_string, expected_json_string)
 
     def test_save_to_file(self):
@@ -28,12 +28,12 @@ class TestBase(unittest.TestCase):
         self.assertTrue(os.path.exists("Base.json"))
         with open("Base.json", "r") as file:
             json_data = file.read()
-            self.assertEqual(json_data, '[{"id": 1}, {"id": 2}])'
+            self.assertEqual(json_data, '[{"id": 1}, {"id": 2}]')
 
     def tearDown(self):
-        """Tear down"""
+        """ tear down """
         if os.path.exists("Base.json"):
-        os.remove("Base.json")
+            os.remove("Base.json")
 
 
 if __name__ == '__main__':
