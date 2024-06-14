@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+""" A module that write into a text file """
+
+
 def write_file(filename="", text=""):
     """
         This function writes a string to a text file
