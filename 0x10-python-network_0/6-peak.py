@@ -1,6 +1,11 @@
 #!/usr/bin/python3
+"""A module with 2 function to finds a peak number"""
+
+
 def find_peak(list_of_integers):
+    """A function that finds a peak in a list of unsorted integers."""
     def binary_search(nums, left, right):
+        """Binary search function"""
         if left == right:
             return nums[left]
 
