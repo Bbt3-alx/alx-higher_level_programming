@@ -2,9 +2,6 @@
 """student to disk and reload"""
 
 
-import json
-
-
 class Student:
     """Class student"""
     def __init__(self, first_name, last_name, age):
