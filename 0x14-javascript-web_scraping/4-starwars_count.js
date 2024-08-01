@@ -8,10 +8,12 @@ const characterUrl = `https://swapi-api.alx-tools.com/api/people/${characterId}/
 let nbMovie = 0;
 request(url, (error, response, body) => {
   if (error) throw error;
-  const films = JSON.parse(body).results;
+  const data = JSON.parse(body);
+
+  const films = data.results;
 
   films.forEach(film => {
-    if (film:x.characters.includes(characterUrl)) {
+    if (film.characters.includes(characterUrl)) {
       nbMovie++;
     }
   });
