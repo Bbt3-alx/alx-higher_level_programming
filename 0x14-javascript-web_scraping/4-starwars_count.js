@@ -10,8 +10,8 @@ request(url, (error, response, body) => {
   if (error) throw error;
   const films = JSON.parse(body).results;
 
-  films.forEach(films => {
-    if (films.characters.includes(characterUrl)) {
+  films.forEach(film => {
+    if (film:x.characters.includes(characterUrl)) {
       nbMovie++;
     }
   });
